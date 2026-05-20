@@ -1,0 +1,19 @@
+build-idx:
+  generated-by: csolution version 2.13.0+p3-g40b6564e
+  csolution: Pulsar.csolution.yml
+  cbuild-run: out/Pulsar+Pulsar.cbuild-run.yml
+  tmpdir: tmp
+  cprojects:
+    - cproject: Pulsar.cproject.yml
+  cbuilds:
+    - cbuild: out/Pulsar/Pulsar/Pulsar+Pulsar.cbuild.yml
+      project: Pulsar
+      configuration: +Pulsar
+      messages:
+        info:
+          - Pulsar.cbuild-pack.yml - file is already up-to-date
+          - Pulsar+Pulsar.cbuild-run.yml - file is already up-to-date
+          - Pulsar+Pulsar.cbuild.yml - file is already up-to-date
+      packs-unused:
+        - pack: ARM::CMSIS-DSP@1.17.0
+        - pack: ARM::CMSIS-NN@4.1.0
