@@ -1,5 +1,7 @@
-MDK-ARM/.cmsis
-MDK-ARM/.vscode
-MDK-ARM/out
-MDK-ARM/tmp
+.git/
+default.code-workspace
+MDK-ARM/.cmsis/
+MDK-ARM/.vscode/
+MDK-ARM/out/
+MDK-ARM/tmp/
 MDK-ARM/Pulsar.uv*

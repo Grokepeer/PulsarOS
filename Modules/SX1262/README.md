@@ -1,0 +1,1 @@
+Inside sx126x_driver you'll find the code from github.com/Lora-net/sx126x_driver unmodified. I then added my interface and HAL implementations in the .c/.h files inside this parent folder.

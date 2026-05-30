@@ -10,6 +10,8 @@ project:
         fpu: sp
       add-path:
         - ../Core/Inc
+        - ../Custom/Inc
+        - ../Modules/SX1262
         - ../Drivers/STM32H7xx_HAL_Driver/Inc
         - ../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy
         - ../Middlewares/Third_Party/FreeRTOS/Source/include
@@ -79,7 +81,6 @@ project:
         - file: ../Core/Src/stm32h7xx_it.c
         - file: ../Core/Src/stm32h7xx_hal_msp.c
         - file: ../Core/Src/stm32h7xx_hal_timebase_tim.c
-        - file: ../Core/Inc/main.h
         - file: ../Core/Src/dma.c
     - group: Drivers/STM32H7xx_HAL_Driver
       files:
@@ -122,9 +123,16 @@ project:
         - file: ../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c
     - group: Application/User/Custom
       files:
-        - file: ../Custom/ui.c
-        - file: ../Custom/ui.h
-        - file: ../Custom/bluetooth.c
-        - file: ../Custom/bluetooth.h
+        - file: ../Custom/Src/radio.c
+        - file: ../Custom/Src/bluetooth.c
+        - file: ../Custom/Src/ui.c
+        - file: ../Custom/Src/radio_api.c
+    - group: Extra/Modules
+      groups:
+        - group: SX1262
+          files:
+            - file: ../Modules/SX1262/interface.c
+            - file: ../Modules/SX1262/sx126x_driver/sx126x.c
+            - file: ../Modules/SX1262/sx126x_hal.c
   components:
     - component: ARM::CMSIS:CORE

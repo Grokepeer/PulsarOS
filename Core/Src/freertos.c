@@ -68,6 +68,13 @@ const osThreadAttr_t Bluetooth_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for Radio */
+osThreadId_t RadioHandle;
+const osThreadAttr_t Radio_attributes = {
+  .name = "Radio",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityAboveNormal,
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -77,6 +84,7 @@ const osThreadAttr_t Bluetooth_attributes = {
 void StartDefaultTask(void *argument);
 extern void LEDsTask(void *argument);
 extern void BluetoothTask(void *argument);
+extern void RadioTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -115,6 +123,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of Bluetooth */
   BluetoothHandle = osThreadNew(BluetoothTask, NULL, &Bluetooth_attributes);
+
+  /* creation of Radio */
+  RadioHandle = osThreadNew(RadioTask, NULL, &Radio_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */

@@ -7,16 +7,22 @@
 #include "usart.h"
 #include <string.h>
 
+// Private define -----------------------------------------------------------------
+
 #define INIT            (uint8_t) 0
 #define RESETTING       (uint8_t) 1
 #define RUNNING         (uint8_t) 2
 #define CONNECTED       (uint8_t) 6
+
+// Global variables ---------------------------------------------------------------
 
 uint8_t buffer[40];
 uint8_t outBuffer[40];
 uint8_t longBuffer[100];
 
 uint8_t bleState = 0;
+
+// Functions ----------------------------------------------------------------------
 
 // This function reset the BLE module to factory then sets the UART to DMA, after the module has reset the BluetoothSet function will be called that will finish resetting the module to the Pulsar default settings
 void BluetoothResetFactory(void)
