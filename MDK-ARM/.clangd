@@ -1,3 +1,5 @@
 CompileFlags:
   CompilationDatabase: /home/grokepeer/Documents/GitHub/PulsarOS/MDK-ARM/out/Pulsar/Pulsar
-  Add: []
+  Add:
+    - -include
+    - /home/grokepeer/Documents/GitHub/PulsarOS/MDK-ARM/out/Pulsar/Pulsar/compile_macros.h

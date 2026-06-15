@@ -1,4 +1,5 @@
 .git/
+.vscode/
 default.code-workspace
 MDK-ARM/.cmsis/
 MDK-ARM/.vscode/

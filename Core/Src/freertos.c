@@ -72,7 +72,7 @@ const osThreadAttr_t Bluetooth_attributes = {
 osThreadId_t RadioHandle;
 const osThreadAttr_t Radio_attributes = {
   .name = "Radio",
-  .stack_size = 256 * 4,
+  .stack_size = 2048 * 4,
   .priority = (osPriority_t) osPriorityAboveNormal,
 };
 

@@ -24,7 +24,7 @@ void LEDsTask(void *argument)
     uint8_t counter = 1;
     for(;;)
     {
-        //HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, LEDsPatterns[LEDSetting[0]] & counter);
+        HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, LEDsPatterns[LEDSetting[0]] & counter);
         HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, LEDsPatterns[LEDSetting[1]] & counter);
         HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, LEDsPatterns[LEDSetting[2]] & counter);
 
